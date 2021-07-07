@@ -1,0 +1,5 @@
+/node_modules
+/express-app-generator.code-workspace
+/.nyc_output
+/coverage
+/lib
