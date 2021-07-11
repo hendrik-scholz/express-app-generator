@@ -49,14 +49,14 @@ describe("Service generator", () => {
         "test/data/expectedServiceImplementationSourceCodePetStore"
       );
       const serviceGenerator = new ServiceGenerator(
-        '',
+        'SwaggerPetStore',
         methodService.getMethodNamesForPaths(openApiDocumentPetStore.paths),
         reader,
         defaultMethodBodyGenerator
       );
       const content = serviceGenerator.generate();
 
-      expect(content.name).to.equal("Service");
+      expect(content.name).to.equal("SwaggerPetStoreService");
       expect(content.type).to.equal(TypeEnum.service);
       expect(content.classAsString).equal(
         expectedServiceSourceCode
