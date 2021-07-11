@@ -1,0 +1,1 @@
+export { #name#Controller } from './#name#controller'

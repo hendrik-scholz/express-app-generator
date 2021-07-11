@@ -1,0 +1,38 @@
+{
+  "name": "express-app",
+  "version": "1.0.0",
+  "description": "express App",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "npm run build:live",
+    "build": "tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developer/express-app.git"
+  },
+  "keywords": [
+    "express",
+    "express app"
+  ],
+  "author": "author",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/developer/express-app/issues"
+  },
+  "homepage": "https://github.com/developer/express-app#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.12",
+    "express": "^4.17.1"
+  }
+}

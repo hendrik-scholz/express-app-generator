@@ -1,0 +1,13 @@
+import express, { Request, Response } from 'express';
+import { Service } from '../services';
+
+export class #name#Controller {
+
+  static start(service: Service, port: number) {
+    const app = express();
+
+    #methods#
+
+    app.listen(port, () => console.log(`#name# app listening on port ${port}!`));
+  }
+}
