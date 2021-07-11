@@ -1,1 +1,1 @@
-export { #name#Controller } from './#name#controller'
+export { #name# } from './#name#';

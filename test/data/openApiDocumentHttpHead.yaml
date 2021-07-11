@@ -1,0 +1,17 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: HTTP HEAD
+  license:
+    name: MIT
+servers:
+  - url: http://petstore.swagger.io/v1
+paths:
+  /pets:
+    head:
+      summary: HTTP HEAD
+      tags:
+        - pets
+      responses:
+        '201':
+          description: Null response
