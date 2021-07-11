@@ -10,6 +10,7 @@ paths:
   /pets:
     put:
       summary: HTTP PUT
+      operationId: put
       tags:
         - pets
       responses:

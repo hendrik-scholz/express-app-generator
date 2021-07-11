@@ -10,7 +10,6 @@ paths:
   /pets:
     post:
       summary: HTTP POST
-      operationId: post
       tags:
         - pets
       responses:

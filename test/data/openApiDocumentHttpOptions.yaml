@@ -10,6 +10,7 @@ paths:
   /pets:
     options:
       summary: HTTP OPTIONS
+      operationId: options
       tags:
         - pets
       responses:

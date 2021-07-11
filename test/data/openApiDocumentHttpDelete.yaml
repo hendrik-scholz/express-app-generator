@@ -10,6 +10,7 @@ paths:
   /pets:
     delete:
       summary: HTTP DELETE
+      operationId: delete
       tags:
         - pets
       responses:

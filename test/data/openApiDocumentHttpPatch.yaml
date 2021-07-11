@@ -10,6 +10,7 @@ paths:
   /pets:
     patch:
       summary: HTTP PATCH
+      operationId: patch
       tags:
         - pets
       responses:

@@ -1,0 +1,7 @@
+export interface Service {
+  listPets(): Promise<void>;
+
+  createPets(): Promise<void>;
+
+  showPetById(): Promise<void>;
+}

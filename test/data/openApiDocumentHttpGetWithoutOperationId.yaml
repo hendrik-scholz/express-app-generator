@@ -1,16 +1,15 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: HTTP POST
+  title: HTTP GET
   license:
     name: MIT
 servers:
   - url: http://petstore.swagger.io/v1
 paths:
   /pets:
-    post:
-      summary: HTTP POST
-      operationId: post
+    get:
+      summary: HTTP GET
       tags:
         - pets
       responses:

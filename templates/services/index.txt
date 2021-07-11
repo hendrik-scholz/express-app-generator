@@ -1,2 +1,2 @@
-export { Service } from './service';
-export { #name#Service } from './#name#service';
+export { Service } from './Service';
+export { #name# } from './#name#';

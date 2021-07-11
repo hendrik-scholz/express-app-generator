@@ -10,6 +10,7 @@ paths:
   /pets:
     head:
       summary: HTTP HEAD
+      operationId: head
       tags:
         - pets
       responses:
