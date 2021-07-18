@@ -1,0 +1,6 @@
+import { Controller } from './controllers';
+import { Service, ServiceImpl } from './services';
+
+const service: Service = new ServiceImpl();
+
+Controller.start(service, 3000);

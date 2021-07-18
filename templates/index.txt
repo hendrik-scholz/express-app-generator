@@ -1,0 +1,6 @@
+import { #controllerName# } from './controllers';
+import { Service, #serviceName# } from './services';
+
+const service: Service = new #serviceName#();
+
+#controllerName#.start(service, 3000);
