@@ -35,7 +35,11 @@ describe("Barrel generator", () => {
         classAsString: '// test'
       };
       const expectedServiceImplBarrelSourceCode = reader.read(
+<<<<<<< HEAD
         "test/data/expectedServiceBarrelSourceCode"
+=======
+        "test/data/expectedServiceImplBarrelSourceCode"
+>>>>>>> 469e6fd... Added barrel generator
       );
 
       const barrelGenerator = new BarrelGenerator(

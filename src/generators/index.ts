@@ -1,3 +1,4 @@
+export { BarrelGenerator } from './barrelGenerator';
 export { ControllerGenerator } from './controllerGenerator';
 export { DefaultMethodBodyGenerator } from './defaultMethodBodyGenerator';
 export { NoMethodBodyGenerator } from './noMethodBodyGenerator';
