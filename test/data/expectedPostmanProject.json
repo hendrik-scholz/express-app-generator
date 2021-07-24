@@ -1,0 +1,48 @@
+{
+  "info": {
+    "_postman_id": "00000000-0000-0000-0000-000000000000",
+    "name": "Swagger Pet Store",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/pets",
+      "request": {
+        "header": [],
+        "method": "GET",
+        "url": {
+          "host": ["{{baseUrl}}"],
+          "path": ["/pets"],
+          "raw": "{{baseUrl}}/pets"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/pets",
+      "request": {
+        "header": [],
+        "method": "POST",
+        "url": {
+          "host": ["{{baseUrl}}"],
+          "path": ["/pets"],
+          "raw": "{{baseUrl}}/pets"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/pets/{{petId}}",
+      "request": {
+        "header": [],
+        "method": "GET",
+        "url": {
+          "host": ["{{baseUrl}}"],
+          "path": ["/pets/{{petId}}"],
+          "raw": "{{baseUrl}}/pets/{{petId}}"
+        }
+      },
+      "response": []
+    }
+  ]
+}

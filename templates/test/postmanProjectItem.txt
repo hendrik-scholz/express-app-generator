@@ -1,0 +1,17 @@
+{
+  "name": "#endpoint#",
+  "request": {
+    "method": "#httpMethod#",
+    "header": [],
+    "url": {
+      "raw": "{{baseUrl}}#endpoint#",
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "path": [
+        "#endpoint#"
+      ]
+    }
+  },
+  "response": []
+}
