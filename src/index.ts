@@ -10,11 +10,21 @@ import { AppGenerator } from './generators/appGenerator';
 import { PostmanProjectGenerator } from './generators/postmanProjectGenerator';
 import { MethodService } from './service';
 
-const reader = new FileReader();
-const writer = new FileWriter('./test/tmp/src');
+const openApiDocumentInputFile = process.argv[2];
+const outputDirectory = process.argv[3];
 
-//SwaggerParser.validate('./test/data/petStore.yaml')
-SwaggerParser.validate('./iCloudAPI.yaml')
+if (openApiDocumentInputFile && outputDirectory) {
+  console.log(`Input file: ${openApiDocumentInputFile}`);
+  console.log(`Output directory: ${outputDirectory}`);
+} else {
+  console.log('Input file and / or output directory not given.');
+  process.exit();
+}
+
+const reader = new FileReader();
+const writer = new FileWriter(outputDirectory);
+
+SwaggerParser.validate(openApiDocumentInputFile)
     .then(openApiDocument => {
       const methodService = new MethodService();
       const methods = methodService.getMethodNamesForPaths(openApiDocument.paths);
@@ -60,7 +70,7 @@ SwaggerParser.validate('./iCloudAPI.yaml')
       writer.write(appGenerator.generate(controllerContent, serviceImplContent));
 
       fs.readdirSync('./templates/project').forEach(filename =>
-        fs.copyFileSync(`./templates/project/${filename}`, `./test/tmp/${filename}`));
+        fs.copyFileSync(`./templates/project/${filename}`, `${outputDirectory}/${filename}`));
 
       const postmanEnvironmentGenerator = new PostmanEnvironmentGenerator(openApiDocument, reader);
       writer.writeStringToFile(postmanEnvironmentGenerator.generate(), `${title}.postman_environment.json`);
