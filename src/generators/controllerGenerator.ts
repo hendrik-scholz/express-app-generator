@@ -29,7 +29,7 @@ export class ControllerGenerator {
       endpoints.push(`app.${method.operation}('${expressPath}', ${this.controllerFunctionParameters} =>
         service.${method.methodName}()
           .then((data: any) => res.sendStatus(${this.defaultHttpStatusCode}))
-          .catch((error: any) => res.sendStatus(500)));`)
+          .catch((error: any) => res.sendStatus(500)));`);
     });
 
     const controller = template

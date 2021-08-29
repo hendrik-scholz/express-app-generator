@@ -1,4 +1,4 @@
-import { ServiceMethodGenerator } from "./serviceMethodGenerator";
+import { ServiceMethodGenerator } from './serviceMethodGenerator';
 
 export class DefaultMethodBodyGenerator extends ServiceMethodGenerator {
 

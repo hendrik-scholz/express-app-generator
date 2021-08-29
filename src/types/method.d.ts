@@ -1,7 +1,7 @@
-import { MethodOperationEnum } from "./methodOperationEnum";
+import { MethodOperationEnum } from './methodOperationEnum';
 
 export interface Method {
-  path: string
+  path: string;
   operation: MethodOperationEnum;
   methodName: string;
 }

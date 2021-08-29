@@ -27,49 +27,49 @@ export class PostmanProjectGenerator {
       if (this.openApiDocument.paths[path]?.get) {
         items.push(postmanProjectItemTemplate
           .replace('#httpMethod#', 'GET')
-          .replace(/#endpoint#/g, expressPath)
+          .replace(/#endpoint#/g, expressPath),
         );
       }
 
       if (this.openApiDocument.paths[path]?.post) {
         items.push(postmanProjectItemTemplate
           .replace('#httpMethod#', 'POST')
-          .replace(/#endpoint#/g, expressPath)
+          .replace(/#endpoint#/g, expressPath),
         );
       }
 
       if (this.openApiDocument.paths[path]?.put) {
         items.push(postmanProjectItemTemplate
           .replace('#httpMethod#', 'PUT')
-          .replace(/#endpoint#/g, expressPath)
+          .replace(/#endpoint#/g, expressPath),
         );
       }
 
       if (this.openApiDocument.paths[path]?.patch) {
         items.push(postmanProjectItemTemplate
           .replace('#httpMethod#', 'PATCH')
-          .replace(/#endpoint#/g, expressPath)
+          .replace(/#endpoint#/g, expressPath),
         );
       }
 
       if (this.openApiDocument.paths[path]?.delete) {
         items.push(postmanProjectItemTemplate
           .replace('#httpMethod#', 'DELETE')
-          .replace(/#endpoint#/g, expressPath)
+          .replace(/#endpoint#/g, expressPath),
         );
       }
 
       if (this.openApiDocument.paths[path]?.options) {
         items.push(postmanProjectItemTemplate
           .replace('#httpMethod#', 'OPTIONS')
-          .replace(/#endpoint#/g, expressPath)
+          .replace(/#endpoint#/g, expressPath),
         );
       }
 
       if (this.openApiDocument.paths[path]?.head) {
         items.push(postmanProjectItemTemplate
           .replace('#httpMethod#', 'HEAD')
-          .replace(/#endpoint#/g, expressPath)
+          .replace(/#endpoint#/g, expressPath),
         );
       }
     });

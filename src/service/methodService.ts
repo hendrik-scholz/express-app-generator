@@ -1,8 +1,12 @@
-import { OpenAPIV2, OpenAPIV3 } from "openapi-types";
-import { Method } from "../types";
-import { MethodOperationEnum } from "../types/methodOperationEnum";
+import { OpenAPIV2, OpenAPIV3 } from 'openapi-types';
+import { Method } from '../types';
+import { MethodOperationEnum } from '../types/methodOperationEnum';
 
 export class MethodService {
+
+  private static readonly FIRST_POSITION = 0;
+  private static readonly SECOND_POSITION = 1;
+  private static readonly THIRD_POSITION = 2;
 
   getMethodNamesForPaths(pathsObject: OpenAPIV2.PathsObject | OpenAPIV3.PathsObject): Method[] {
     const methodNames: Method[] = [];
@@ -13,7 +17,7 @@ export class MethodService {
         methodNames.push({
           path,
           operation: MethodOperationEnum.get,
-          methodName: this.getNameForOperation(pathObject?.get, path, MethodOperationEnum.get)
+          methodName: this.getNameForOperation(pathObject?.get, path, MethodOperationEnum.get),
         });
       }
 
@@ -21,7 +25,7 @@ export class MethodService {
         methodNames.push({
           path,
           operation: MethodOperationEnum.post,
-          methodName: this.getNameForOperation(pathObject?.post, path, MethodOperationEnum.post)
+          methodName: this.getNameForOperation(pathObject?.post, path, MethodOperationEnum.post),
         });
       }
 
@@ -29,7 +33,7 @@ export class MethodService {
         methodNames.push({
           path,
           operation: MethodOperationEnum.put,
-          methodName: this.getNameForOperation(pathObject?.put, path, MethodOperationEnum.put)
+          methodName: this.getNameForOperation(pathObject?.put, path, MethodOperationEnum.put),
         });
       }
 
@@ -37,7 +41,7 @@ export class MethodService {
         methodNames.push({
           path,
           operation: MethodOperationEnum.patch,
-          methodName: this.getNameForOperation(pathObject?.patch, path, MethodOperationEnum.patch)
+          methodName: this.getNameForOperation(pathObject?.patch, path, MethodOperationEnum.patch),
         });
       }
 
@@ -45,7 +49,7 @@ export class MethodService {
         methodNames.push({
           path,
           operation: MethodOperationEnum.delete,
-          methodName: this.getNameForOperation(pathObject?.delete, path, MethodOperationEnum.delete)
+          methodName: this.getNameForOperation(pathObject?.delete, path, MethodOperationEnum.delete),
         });
       }
 
@@ -53,7 +57,7 @@ export class MethodService {
         methodNames.push({
           path,
           operation: MethodOperationEnum.options,
-          methodName: this.getNameForOperation(pathObject?.options, path, MethodOperationEnum.options)
+          methodName: this.getNameForOperation(pathObject?.options, path, MethodOperationEnum.options),
         });
       }
 
@@ -61,7 +65,7 @@ export class MethodService {
         methodNames.push({
           path,
           operation: MethodOperationEnum.head,
-          methodName: this.getNameForOperation(pathObject?.head, path, MethodOperationEnum.head)
+          methodName: this.getNameForOperation(pathObject?.head, path, MethodOperationEnum.head),
         });
       }
     });
@@ -72,7 +76,7 @@ export class MethodService {
       return [{
         path: '/',
         operation: MethodOperationEnum.default,
-        methodName: 'default'
+        methodName: 'default',
       }];
     }
   }
@@ -94,10 +98,10 @@ export class MethodService {
   private getMethodNameForPathAndHttpRequestMethod(path: string, httpRequestMethod: string): string {
     const name = path.split('/')
       .map(pathSection => {
-        if (pathSection.charAt(0) !== '{') {
-          return `${pathSection.charAt(0).toUpperCase()}${pathSection.substr(1)}`;
+        if (pathSection.charAt(MethodService.FIRST_POSITION) !== '{') {
+          return `${pathSection.charAt(MethodService.FIRST_POSITION).toUpperCase()}${pathSection.substr(MethodService.SECOND_POSITION)}`;
         } else {
-          return `${pathSection.charAt(1).toUpperCase()}${pathSection.substr(2, pathSection.indexOf('}') - 2)}`;
+          return `${pathSection.charAt(MethodService.SECOND_POSITION).toUpperCase()}${pathSection.substr(MethodService.THIRD_POSITION, pathSection.indexOf('}') - 2)}`;
         }
       })
       .filter(newCaseStr => newCaseStr.length > 0)
