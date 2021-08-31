@@ -25,7 +25,7 @@ export class ControllerGenerator {
     const endpoints: string[] = [];
 
     this.methods.forEach((method) => {
-      const expressPath = method.path.replace('{', ':').replace('}', '');
+      const expressPath = method.path.replace(/{/g, ':').replace(/}/g, '');
       endpoints.push(`app.${method.operation}('${expressPath}', ${this.controllerFunctionParameters} =>
         service.${method.methodName}()
           .then((data: any) => res.sendStatus(${this.defaultHttpStatusCode}))
